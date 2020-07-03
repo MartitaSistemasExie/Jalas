@@ -1,0 +1,84 @@
+<ion-content>
+  <!-- <ion-content> -->
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content
+        pullingIcon="chevron-down-circle-outline"
+        pullingText="Pull to refresh"
+        refreshingSpinner="circles">
+      </ion-refresher-content>
+    </ion-refresher>
+  <!-- </ion-content> -->
+  <ion-grid>
+    <!-- Barra de Busqueda -->
+    <ion-row>
+      <ion-col>
+        <ion-searchbar  placeholder="Filtrar Eventos Por Nombre" 
+                        showCancelButton="focus" 
+                        (ionCancel)="getEvents()"
+                        (ionChange)="searchName($event)"></ion-searchbar>
+      </ion-col>
+    </ion-row>
+
+    <!-- Date Picker -->
+    <!-- <ion-row>
+      <ion-col>
+        <ion-label>Filtrar Eventos Por Fecha</ion-label>
+        <ion-datetime placeholder="01-01-2020" 
+                      [(ngModel)]="searchDate" 
+                      doneText="Filtrar" 
+                      cancelText="Cancelar"
+                      (ionCancel)="getEvents()"
+                      (ionChange)="searchByDate()"></ion-datetime>
+      </ion-col>
+    </ion-row> -->
+
+    <!-- Lista de Eventos -->
+    <ion-row>
+      <ion-col>
+        <ion-item *ngFor="let event of events">
+          <ion-card class="myCard">
+            <img [src]="'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/event/banner/'+ event.bannerImage + '.jpg'" class="bannerImage"/>
+            <div class="myOverlay">
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="3">
+                    <ion-avatar class="avatar-radius">
+                      <img [src]="'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/establishment/profile/'+ event.establishment.profileImage + '.jpg'"/>
+                    </ion-avatar>
+                  </ion-col>
+                  <ion-col>
+                    <ion-card-title>
+                      <b>{{event.name}}</b><br/>
+                      <ion-text>{{event.establishment.name}}</ion-text>
+                    </ion-card-title>
+                    <br/>
+                    <ion-card-subtitle>
+                      {{event.address}}
+                      <ion-label>{{event.date.fechaInicio}} - {{event.date.horaInicio}}</ion-label>
+                      <ion-label>{{event.date.fechaFin}} - {{event.date.horaFin}}</ion-label>
+                    </ion-card-subtitle>
+                  </ion-col>
+                </ion-row>
+                <br/>
+                <ion-row>
+                  <ion-col></ion-col>
+                  <ion-col>
+                    <ion-button fill="outline" (click)="openEventDetail(event)">
+                      Ver
+                    </ion-button>
+                  </ion-col>
+                  <ion-col>
+                    <ion-button fill="clear" (click)="addEvent(event)">
+                      <ion-icon name="star-outline"></ion-icon>
+                    </ion-button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+          </ion-card>
+
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

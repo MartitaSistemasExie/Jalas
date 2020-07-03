@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">localhost</domain>
+        <!-- <domain includeSubdomains="true">192.168.100.4</domain> -->
+        <!-- <domain includeSubdomains="true">18.234.8.127</domain> -->
+        <domain includeSubdomains="true">jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com</domain>
+    </domain-config>
+</network-security-config>

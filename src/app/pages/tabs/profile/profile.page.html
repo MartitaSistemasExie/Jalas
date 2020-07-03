@@ -1,0 +1,241 @@
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-grid>
+    <!--    Profile Card -->
+    <ion-row>
+      <ion-col>
+        <ion-card class="myCard">
+          <img [src]="user.bannerImage" class="bannerImage"/>
+          <div class="myOverlay">
+            <ion-grid>
+              <ion-row>
+                <ion-col size="3">
+                  <ion-avatar class="avatar-radius">
+                    <img [src]="user.profileImage" style="width: 75px; height: 75px;"/>
+                  </ion-avatar>
+                </ion-col>
+                <ion-col>
+                  <ion-card-title>
+                    <b>{{user.name}}</b>
+                  </ion-card-title>
+                  <br/>
+                  <ion-card-subtitle>
+                    {{user.city}}
+                  </ion-card-subtitle>
+                </ion-col>
+              </ion-row>
+              <br/>
+            </ion-grid>
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+<!--    Personal Info -->
+    <ion-row>
+      <ion-col>
+        <ion-row>
+          <ion-col></ion-col>
+          <ion-col size="10">
+            <ion-label>Información Personal</ion-label>
+          </ion-col>
+          <ion-col></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>Teléfono</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>&nbsp;&nbsp;{{user.phone}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>Radio de Búsqueda</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>&nbsp;&nbsp;{{user.radio}}</ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+
+<!--    EVENTOS-->
+    <ion-row>
+      <ion-col>
+        <ion-label>Mis Eventos</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-slides *ngIf="!emptyEvents" [options]="slideOpts">
+          <ion-slide *ngFor="let event of user.events">
+            <ion-card class="myCard">
+              <img [src]="'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/event/banner/'+ event.conf.images.bannerImage + '.jpg'" class="bannerImage"/>
+              <div class="myOverlay">
+                <ion-grid>
+                  <ion-row>
+                    <ion-col size="3">
+                      <ion-avatar class="avatar-radius">
+                        <img [src]="'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/establishment/profile/'+ event.establishment.conf.images.profileImage + '.jpg'" class="avatarImage"/>
+                      </ion-avatar>
+                    </ion-col>
+                    <ion-col>
+                      <ion-card-title>
+                        <b>{{event.name}}</b><br/>
+                        <ion-text>{{event.establishment.name}}</ion-text>
+                      </ion-card-title>
+                      <br/>
+                      <ion-card-subtitle>
+                        {{event.address}}
+                      </ion-card-subtitle>
+                    </ion-col>
+                  </ion-row>
+                  <br/>
+                  <ion-row>
+                    <ion-col></ion-col>
+                    <ion-col>
+                      <ion-button fill="outline" (click)="openEventDetail(event)">
+                        Ver
+                      </ion-button>
+                    </ion-col>
+                    <ion-col>
+                      <ion-button fill="clear" (click)="removeEvent(event)">
+                        <ion-icon name="star"></ion-icon>
+                      </ion-button>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </div>
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+        <ion-card *ngIf="emptyEvents">
+          <ion-card-header>Sin Eventos</ion-card-header>
+          <ion-card-content>
+            Aún no marcas ningún evento como Asistiré <ion-icon name="star-outline"></ion-icon>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <!-- LUGARES -->
+    <ion-row>
+      <ion-col>
+        <ion-label>Mis Lugares</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-slides *ngIf="!emptyPlaces" [options]="slideOpts">
+          <ion-slide *ngFor="let site of user.favorites">
+            <ion-card class="myCard">
+              <img [src]="'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/establishment/banner/'+site.conf.images.bannerImage + '.jpg'" class="bannerImage"/>
+              <div class="myOverlay">
+                <ion-grid>
+                  <ion-row>
+                    <ion-col size="3">
+                      <ion-avatar class="avatar-radius">
+                        <img [src]="'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/establishment/profile/'+site.conf.images.profileImage + '.jpg'" class="avatarImage"/>
+                      </ion-avatar>
+                    </ion-col>
+                    <ion-col>
+                      <ion-card-title>
+                        <b>{{site.name}}</b>
+                      </ion-card-title>
+                      <br/>
+                      <ion-card-subtitle>
+                        {{site.conf.location.address}}
+                      </ion-card-subtitle>
+                    </ion-col>
+                  </ion-row>
+                  <br/>
+                  <ion-row>
+                    <ion-col></ion-col>
+                    <ion-col>
+                      <ion-button fill="outline" (click)="openEstablishmentDetail(site)">
+                        Ver
+                      </ion-button>
+                    </ion-col>
+                    <ion-col>
+                      <ion-button fill="clear" (click)="removeFavorite(site)">
+                        <ion-icon name="heart"></ion-icon>
+                      </ion-button>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </div>
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+        <ion-card *ngIf="emptyPlaces">
+          <ion-card-header>Sin Lugares</ion-card-header>
+          <ion-card-content>
+            Aún no marcas ningún lugar como Favorito <ion-icon name="heart-outline"></ion-icon>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <!-- Para Ti | Buscar por Generos -->
+    <ion-row>
+      <ion-col>
+        <ion-label>Para ti</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-slides *ngIf="!noEventsFound" [options]="slideOpts">
+          <ion-slide *ngFor="let event of eventsGen">
+            <ion-card class="myCard">
+              <img [src]="'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/event/banner/'+ event.bannerImage + '.jpg'" class="bannerImage"/>
+              <div class="myOverlay">
+                <ion-grid>
+                  <ion-row>
+                    <ion-col size="3">
+                      <ion-avatar class="avatar-radius">
+                        <img [src]="'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/establishment/profile/'+ event.establishment.profileImage + '.jpg'" class="avatarImage"/>
+                      </ion-avatar>
+                    </ion-col>
+                    <ion-col>
+                      <ion-card-title>
+                        <b>{{event.name}}</b><br/>
+                        <ion-text>{{event.establishment.name}}</ion-text>
+                      </ion-card-title>
+                      <br/>
+                      <ion-card-subtitle>
+                        {{event.address}}
+                      </ion-card-subtitle>
+                    </ion-col>
+                  </ion-row>
+                  <br/>
+                  <ion-row>
+                    <ion-col></ion-col>
+                    <ion-col>
+                      <ion-button fill="outline">
+                        Ver
+                      </ion-button>
+                    </ion-col>
+                    <ion-col>
+                      <ion-button fill="clear" (click)="addEvent(event)">
+                        <ion-icon name="star-outline"></ion-icon>
+                      </ion-button>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </div>
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+        <ion-card *ngIf="noEventsFound">
+          <ion-card-header>Sin Eventos</ion-card-header>
+          <ion-card-content>
+            No encontramos eventos con tus gustos musicales cerca de ti. <ion-icon name="sad-outline"></ion-icon>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

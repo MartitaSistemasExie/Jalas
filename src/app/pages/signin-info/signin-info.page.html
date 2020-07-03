@@ -1,0 +1,126 @@
+<ion-header no-border="true" translucent>
+  <ion-toolbar>
+    <ion-button fill="clear" slot="start" [routerLink]="['/login']" routerDirection="root" color="danger">
+      Cancelar
+    </ion-button>
+    <ion-title>Crear Cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content align="center">
+  <ion-grid>
+    <!--   Title -->
+    <ion-row>
+      <ion-col>
+        <ion-text><p>Información Personal</p></ion-text>
+      </ion-col>
+    </ion-row>
+    <!--    Cumpleaños -->
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="stacked" color="primary">Fecha de Nacimiento</ion-label>
+          <ion-datetime
+                  displayFormat="YYYY MM DD"
+                  doneText="Ok"
+                  cancelText="Cerrar"
+                  [(ngModel)]="birthday"
+                  required></ion-datetime>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+<!--    Sexo -->
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="stacked" color="primary">Sexo</ion-label>
+          <ion-select placeholder="Selecciona"
+                      okText="Ok"
+                      cancelText="Cerrar"
+                      [(ngModel)]="sex"
+                      required>
+            <ion-select-option value="H">Hombre</ion-select-option>
+            <ion-select-option value="M">Mujer</ion-select-option>
+            <ion-select-option value="P">Sin Especificar</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+<!--    Estado -->
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="stacked" color="primary">Estado</ion-label>
+          <ion-select placeholder="Selecciona Estado"
+                      okText="Ok"
+                      cancelText="Cerrar"
+                      [(ngModel)]="state"
+                      required>
+            <ion-select-option value="Mex">Ciudad de México</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+<!--    Ciudad -->
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="stacked" color="primary">Ciudad</ion-label>
+          <ion-select placeholder="Selecciona Ciudad"
+                      okText="Ok"
+                      cancelText="Cerrar"
+                      [(ngModel)]="city"
+                      required>
+            <ion-select-option value="Centro">Centro</ion-select-option>
+            <ion-select-option value="Nor-Oriente">Nor-Oriente</ion-select-option>
+            <ion-select-option value="Norte">Norte</ion-select-option>
+            <ion-select-option value="Oriente">Oriente</ion-select-option>
+            <ion-select-option value="Poniente">Poniente</ion-select-option>
+            <ion-select-option value="Sur">Sur</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+<!--    Telefono -->
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="stacked" color="primary">Teléfono</ion-label>
+          <ion-input placeholder="12345123"
+                     type="number"
+                     [(ngModel)]="phone"
+                     required></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+<!--    Generos -->
+    <ion-row>
+      <ion-col>
+        <ion-text style="font-size: small" color="primary">Gustos Musicales Favoritos</ion-text><br/>
+        <ion-list>
+          <ion-item *ngFor="let type of musicTypes" lines="none">
+            <ion-label>
+              {{type.name}}
+            </ion-label>
+            <ion-checkbox slot="end" [ngModel]="type.isChecked" color="dark" (ionChange)="checkMusicType(type)"></ion-checkbox>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+<!--    Terminos y Condiciones -->
+    <ion-row>
+      <ion-col>
+        <ion-text style="font-size: small"> Al crear una cuenta estas aceptando los <a> acuerdos de confidencialidad y privacidad</a>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+<!--    Botón -->
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col size="6">
+        <ion-button color="dark" expand="block" fill="outline" (click)="createAccount()"> CREAR </ion-button>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

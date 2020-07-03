@@ -1,0 +1,67 @@
+<ion-header no-border="true" translucent>
+  <ion-toolbar>
+    <ion-button fill="clear" slot="start" (click)="cerrarModal()" color="danger">
+      Cerrar
+    </ion-button>
+    <ion-title>Evento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card class="myCard">
+            <img [src]="'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/event/banner/'+ event.conf.images.bannerImage + '.jpg'" class="bannerImage"/>
+            <div class="myOverlay">
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="3">
+                    <ion-avatar class="avatar-radius">
+                      <img [src]="'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/establishment/profile/'+ event.establishment.conf.images.profileImage + '.jpg'"/>
+                    </ion-avatar>
+                  </ion-col>
+                  <ion-col>
+                    <ion-card-title>
+                      <b>{{event.name}}</b><br/>
+                      <ion-text>{{event.establishment.name}}</ion-text>
+                    </ion-card-title>
+                    <br/>
+                    <ion-card-subtitle>
+                      {{event.conf.address}}
+                    </ion-card-subtitle>
+                  </ion-col>
+                </ion-row>
+                <br/>
+                <ion-row>
+                  <ion-col>
+                    <ion-text>
+                      <p style="font-size: small;">Inicia: {{event.conf.date.fechaInicio}} - {{event.conf.date.horaInicio}}</p><br/>
+                      <p style="font-size: small;">Termina: {{event.conf.date.fechaFin}} - {{event.conf.date.horaFin}}</p>
+                    </ion-text>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <p>
+                      {{event.conf.description}}
+                    </p>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+          </ion-card>
+          <div id='map' style='width: 400px; height: 300px;'></div>
+          <ion-row>
+            <ion-col></ion-col>
+            <ion-col></ion-col>
+            <ion-col>
+              <ion-button shape="round" fill="outline" (click)="showMapOptions()">
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

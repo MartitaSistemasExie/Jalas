@@ -1,0 +1,74 @@
+
+<ion-content>
+  <ion-grid>
+    <!--    Profile Card -->
+    <ion-row>
+      <ion-col>
+        <ion-card class="myCard">
+          <img [src]="user.bannerImage" class="bannerImage"/>
+          <div class="myOverlay">
+            <ion-grid>
+              <ion-row>
+                <ion-col size="3">
+                  <ion-avatar class="avatar-radius">
+                    <img [src]="user.profileImage"/>
+                  </ion-avatar>
+                </ion-col>
+                <ion-col>
+                  <ion-card-title>
+                    <b>{{user.name}}</b>
+                  </ion-card-title>
+                  <br/>
+                  <ion-card-subtitle>
+                    {{user.city}}
+                  </ion-card-subtitle>
+                </ion-col>
+              </ion-row>
+              <br/>
+            </ion-grid>
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <!--    Acciones -->
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <!--          Modificar Información -->
+          <ion-item lines="none">
+            <ion-button size="large"
+                        color="dark"
+                        fill="clear"
+                        (click)="openEditInfo()">
+              Editar Información
+            </ion-button>
+          </ion-item>
+          <!--          Modificar Perfil -->
+          <ion-item lines="none">
+            <ion-button size="large"
+                        color="dark"
+                        fill="clear"
+                        (click)="openEditProfile()">
+              Editar Perfil
+            </ion-button>
+          </ion-item>
+          <!--          Modificar Contraseña-->
+          <ion-item lines="none">
+            <ion-button size="large" color="dark" fill="clear" (click)="openEditPassword()">
+              Seguridad
+            </ion-button>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col size="7">
+        <ion-button color="dark" fill="outline" expand="block" (click)="logOut()">
+          Cerrar Sesión
+        </ion-button>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

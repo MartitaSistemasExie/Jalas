@@ -1,5 +1,7 @@
 {
   "name": "Jalas-User",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

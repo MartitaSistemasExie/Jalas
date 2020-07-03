@@ -1,0 +1,67 @@
+<ion-header no-border="true" translucent>
+  <ion-toolbar>
+    <ion-button fill="clear" slot="start" (click)="cerrarModal()" color="danger">
+      Cerrar
+    </ion-button>
+    <ion-title>Editar Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <!--    Imagen de Portada-->
+    <ion-row>
+      <ion-col>
+        <ion-card align="center">
+          <ion-card-header>
+            <ion-text color="dark" style="font-size: large;">
+              Imagen de Portada
+            </ion-text>
+          </ion-card-header>
+          <ion-card-title>
+            <ion-img *ngIf="bannerImg" [src]="bannerImg" class="bannerImage"></ion-img>
+          </ion-card-title>
+          <ion-card-content>
+            <ion-button color="dark"
+                        expand="block"
+
+                        (click)="addBannerImage()">
+              Cambiar Imagen
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <!--    Imagen de Perfil-->
+    <ion-row>
+      <ion-col>
+        <ion-card align="center">
+          <ion-card-header>
+            <ion-text color="dark" style="font-size: large;">
+              Imagen de Perfil
+            </ion-text>
+          </ion-card-header>
+          <ion-card-title>
+            <ion-grid>
+              <ion-row>
+                <ion-col></ion-col>
+                <ion-col style="padding-left: 10%">
+                  <ion-avatar class="avatar-radius">
+                    <img [src]="avatarImg" style="max-height: 100px;"/>
+                  </ion-avatar>
+                </ion-col>
+                <ion-col></ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-title>
+          <ion-card-content>
+            <ion-button color="dark" expand="block" fill="outline" (click)="addAvatarImage()">Cambiar
+              Imagen
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -1,0 +1,65 @@
+<ion-content align="center">
+  <ion-grid class="ion-padding-top">
+    <!--    Logo -->
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col size="6">
+        <picture>
+          <!--          Dark Logo -->
+          <source srcset="../../../../assets/img/whiteLogo.png"
+                  media="(prefers-color-scheme: dark)"/>
+          <!--          Light Logo -->
+          <source srcset="../../../../assets/img/logo.png"
+                  media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"/>
+          <img src="../../../../assets/img/logo.png"/>
+        </picture>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+    <!--    Correo -->
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="stacked">Correo</ion-label>
+          <ion-input placeholder="ejemplo@correo.com" inputmode="email" [(ngModel)]="usuario.email"
+                     required></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <!--    Contraseña -->
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="stacked">Contraseña</ion-label>
+          <ion-input placeholder="*****" type="password" [(ngModel)]="usuario.password"
+                     required></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <!--    Olvide mi Pswd -->
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col size="6">
+        <ion-text>  <a style="font-size: small" >Olvidaste tu Contraseña?</a> <br/><br/><br/>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <!--    Registro -->
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col size="6">
+        <ion-button shape="round" expand="block" color="dark" fill="outline" [routerLink]="['/signin']" routerDirection="root">Registrate</ion-button>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+    <!--    Login -->
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col size="6">
+        <ion-button shape="round" expand="full" color="dark" (click)="doLogin()"> Login </ion-button>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

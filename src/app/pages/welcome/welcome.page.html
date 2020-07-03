@@ -1,0 +1,36 @@
+<ion-content align="center">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-text>
+          <h1>Bienvenido!</h1> <br/>
+          <p> Para Jalas es importante que vivas una experiencia completamente personalizada.</p>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <br/>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col size="6">
+        <picture>
+          <!--          Dark Logo -->
+          <source srcset="../../../assets/img/whiteLogo.png"
+                  media="(prefers-color-scheme: dark)"/>
+          <!--          Light Logo -->
+          <source srcset="../../../assets/img/logo.png"
+                  media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"/>
+          <img src="../../../assets/img/logo.png"/>
+        </picture>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col size="7">
+        <ion-button color="dark" size="large" fill="clear" (click)="goToUserTabs()">CONTINUAR > </ion-button>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  urlBackend: 'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com/'
 };
 
 /*
