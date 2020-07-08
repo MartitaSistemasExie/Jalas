@@ -61,10 +61,25 @@
                   <ion-col>
                     <ion-slides [options]="slideOpts">
                       <ion-slide *ngFor="let image of establishment.conf.gallery">
-                        <img [src]="'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/establishment/gallery/' + image + '.jpg'" style="width: 75px; height: 75px;">
+                        <!-- <ion-button fill="clear" (click)="openPhoto(image)" size="large"> -->
+                          <img [src]="'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/establishment/gallery/' + image + '.jpg'" style="width: auto; height: 100px!important;" (click)="openPhoto(image)">
+                        <!-- </ion-button> -->
+                        <!-- <ion-img [src]="'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/establishment/gallery/' + image + '.jpg'" style="width: 75px; height: 75px;">
+                          <ion-button fill="clear" (click)="openPhoto(image)"></ion-button>
+                        </ion-img> -->
                       </ion-slide>
                     </ion-slides>
+    
                   </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col></ion-col>
+                  <ion-col size="6">
+                    <ion-button fill="outline" (click)="openEstablishmentGallery()" expand="block">
+                      Ver Galería
+                    </ion-button>
+                  </ion-col>
+                  <ion-col></ion-col>
                 </ion-row>
               </ion-grid>
             </div>

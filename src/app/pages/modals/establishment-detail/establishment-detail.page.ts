@@ -2,6 +2,8 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import { NavParams, ActionSheetController, ModalController, LoadingController } from '@ionic/angular';
 import { HTTP } from '@ionic-native/http/ngx';
+import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
+import { EstablishmentGalleryPage } from '../establishment-gallery/establishment-gallery.page';
 
 
 declare var mapboxgl: any;
@@ -23,6 +25,7 @@ export class EstablishmentDetailPage implements OnInit, AfterViewInit {
     speed: 400
   };
   constructor(private navParams: NavParams,
+              private photoViewer: PhotoViewer,
               private actionSheetController: ActionSheetController,
               private modalController: ModalController,
               private loadingController: LoadingController,
@@ -30,6 +33,34 @@ export class EstablishmentDetailPage implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.getEstablishment();
+  }
+
+  openPhoto(image) {
+    this.photoViewer.show('http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/establishment/gallery/' + image + '.jpg');
+  }
+
+  async openEstablishmentGallery() {
+    console.log('openEstablishmentGallery: ', this.id);
+    const modal = await this.modalController.create( {
+      component: EstablishmentGalleryPage,
+      componentProps: {
+        id: this.id
+      }
+    });
+    modal.onDidDismiss().then(() => {
+      this.getEstablishment();
+    });
+    return await modal.present();
+    // const modal = await this.modalController.create({
+    //   component: EstablishmentDetailPage,
+    //   componentProps: {
+    //     id: site.idestablishment
+    //   }
+    // });
+    // modal.onDidDismiss().then(() => {
+    //   this.getEstablishments();
+    // });
+    // return await modal.present();
   }
 
   ngAfterViewInit() {
@@ -103,7 +134,7 @@ export class EstablishmentDetailPage implements OnInit, AfterViewInit {
   }
 
   getEstablishment() {
-    this.presentLoading();
+    // this.presentLoading();
     const service = 'establishments/getEstablishmentInfo';
     const data = {
       idEstablishment: this.id

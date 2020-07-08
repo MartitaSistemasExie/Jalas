@@ -16,6 +16,7 @@ import {Camera} from '@ionic-native/camera/ngx';
 import { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import {HTTP} from '@ionic-native/http/ngx';
+import {PhotoViewer} from '@ionic-native/photo-viewer/ngx';
 // import {LaunchNavigator} from '@ionic-native/launch-navigator/ngx';
 
 @NgModule({
@@ -26,6 +27,7 @@ import {HTTP} from '@ionic-native/http/ngx';
     StatusBar,
     Camera,
     HTTP,
+    PhotoViewer,
     // LaunchNavigator,
     Geolocation,
     NativeGeocoder,

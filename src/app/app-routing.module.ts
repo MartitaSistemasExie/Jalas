@@ -56,6 +56,10 @@ const routes: Routes = [
     path: 'welcome',
     loadChildren: () => import('./pages/welcome/welcome.module').then( m => m.WelcomePageModule)
   },
+  {
+    path: 'establishment-gallery',
+    loadChildren: () => import('./pages/modals/establishment-gallery/establishment-gallery.module').then( m => m.EstablishmentGalleryPageModule)
+  },
 ];
 
 @NgModule({
