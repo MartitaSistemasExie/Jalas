@@ -24,6 +24,7 @@ export class EventsPage implements OnInit {
   latitude;
   longitude;
   events;
+  emptyEvents = true;
   idUser;
   constructor(private alertController: AlertController,
               private http: HTTP,
@@ -103,6 +104,9 @@ export class EventsPage implements OnInit {
       this.serviceResp = JSON.parse(resp.data);
       console.log('RESP: ', this.serviceResp);
       this.events = this.serviceResp.data;
+      if (this.events.length > 0) {
+        this.emptyEvents = false;
+      }
     }).catch(error => {
       this.loadingController.dismiss();
       console.log('ERROR: ', error);

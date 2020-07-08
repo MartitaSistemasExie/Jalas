@@ -32,6 +32,25 @@
       </ion-col>
     </ion-row> -->
 
+<!-- No hay Eventos -->
+    <ion-row *ngIf="emptyEvents">
+      <ion-col>
+        <ion-row>
+          <ion-col>
+            <ion-img src="../../../../assets/img/notFound.png"></ion-img>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col></ion-col>
+          <ion-col size="10">
+            <ion-text><b>Ups! No pudimos encontrar Eventos cerca de ti.</b></ion-text> &nbsp;
+            <ion-icon name="sad-outline"></ion-icon>
+          </ion-col>
+          <ion-col></ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+
     <!-- Lista de Eventos -->
     <ion-row>
       <ion-col>

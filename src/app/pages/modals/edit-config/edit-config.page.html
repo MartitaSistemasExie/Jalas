@@ -1,7 +1,7 @@
 <ion-header no-border="true" translucent>
   <ion-toolbar>
     <ion-button fill="clear" slot="start"  (click)="cerrarModal()" color="danger">
-      Cancelar
+      <ion-icon name="chevron-back-outline"></ion-icon>
     </ion-button>
     <ion-title>Editar Información</ion-title>
   </ion-toolbar>
@@ -13,7 +13,7 @@
     <ion-row>
       <ion-col>
         <ion-item>
-          <ion-label position="floating">Nombre</ion-label>
+          <ion-label position="floating" style="font-size: large;">Nombre</ion-label>
           <ion-input type="text" placeholder="Tu Nombre" [(ngModel)]="data.name"></ion-input>
         </ion-item>
       </ion-col>
@@ -21,7 +21,7 @@
     <ion-row>
       <ion-col>
         <ion-item>
-          <ion-label position="floating">Apellido</ion-label>
+          <ion-label position="floating" style="font-size: large;">Apellido</ion-label>
           <ion-input type="text" placeholder="Tu Apellido" [(ngModel)]="data.lastName"></ion-input>
         </ion-item>
       </ion-col>
@@ -29,7 +29,7 @@
     <ion-row>
       <ion-col>
         <ion-item>
-          <ion-label position="floating">Teléfono</ion-label>
+          <ion-label position="floating" style="font-size: large;">Teléfono</ion-label>
           <ion-input type="tel" placeholder="11111111111" [(ngModel)]="data.phone"></ion-input>
         </ion-item>
       </ion-col>
@@ -37,7 +37,7 @@
     <ion-row>
       <ion-col>
         <ion-item>
-          <ion-label position="floating">Radio de Búsqueda</ion-label>
+          <ion-label position="floating" style="font-size: large;">Radio de Búsqueda</ion-label>
           <ion-select okText="Ok" cancelText="Cancelar" [(ngModel)]="data.updateData[0].data">
             <ion-select-option value="5">5</ion-select-option>
             <ion-select-option value="10">10</ion-select-option>

@@ -40,7 +40,8 @@
                         color="dark"
                         fill="clear"
                         (click)="openEditInfo()">
-              Editar Información
+              <ion-icon name="build-outline"></ion-icon> &nbsp;
+              <ion-label style="font-size: small;">Editar Información</ion-label>
             </ion-button>
           </ion-item>
           <!--          Modificar Perfil -->
@@ -49,19 +50,21 @@
                         color="dark"
                         fill="clear"
                         (click)="openEditProfile()">
-              Editar Perfil
+              <ion-icon name="person-circle-outline"></ion-icon> &nbsp;
+              <ion-label style="font-size: small;">Editar Perfil</ion-label>
             </ion-button>
           </ion-item>
           <!--          Modificar Contraseña-->
           <ion-item lines="none">
             <ion-button size="large" color="dark" fill="clear" (click)="openEditPassword()">
-              Seguridad
+              <ion-icon name="lock-closed-outline"></ion-icon> &nbsp;
+              <ion-label style="font-size: small;">Seguridad</ion-label>
             </ion-button>
           </ion-item>
         </ion-list>
       </ion-col>
     </ion-row>
-    <ion-row>
+    <ion-row style="padding-top: 100px;"> 
       <ion-col></ion-col>
       <ion-col size="7">
         <ion-button color="dark" fill="outline" expand="block" (click)="logOut()">

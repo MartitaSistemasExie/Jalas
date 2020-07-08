@@ -23,6 +23,7 @@ export class EstablishmentsPage implements OnInit {
   latitude;
   longitude;
   establishments;
+  emptyEstablishments = true;
   idUser;
   constructor(private alertController: AlertController,
               private http: HTTP,
@@ -66,7 +67,6 @@ export class EstablishmentsPage implements OnInit {
     this.callSearchEstablishments();
   }
 
-
   callSearchEstablishments() {
     const service = 'search/searchEstablishments';
     const data = {
@@ -81,6 +81,9 @@ export class EstablishmentsPage implements OnInit {
       this.serviceResp = JSON.parse(resp.data);
       console.log('RESP: ', this.serviceResp);
       this.establishments = this.serviceResp.data;
+      if (this.establishments.length > 0) {
+        this.emptyEstablishments = false;
+      }
     }).catch(error => {
       this.loadingController.dismiss();
       console.log('ERROR: ', error);
@@ -103,15 +106,11 @@ export class EstablishmentsPage implements OnInit {
     });
   }
 
-
-
-
   async getUserRadio() {
     await this.storage.get('userRadio').then(val => {
         this.distance = val;
     });
   }
-
 
   searchName(event) {
     this.searchText = event.detail.value;
@@ -148,7 +147,6 @@ export class EstablishmentsPage implements OnInit {
       event.target.complete();
     }, 2000);
   }
-
 
   async openEstablishmentDetail(site) {
     console.log('openEstablishmentDetail: ', site);
@@ -187,18 +185,18 @@ export class EstablishmentsPage implements OnInit {
     });
   }
 
-async singleAlert(title, body) {
-  const alert = await this.alertController.create({
-    header: title,
-    message: body,
-    backdropDismiss: false,
-    buttons: ['OK']
-  });
-  alert.onDidDismiss().then( () => {
-    this.getEstablishments();
-  });
-  return await alert.present();
-}
+  async singleAlert(title, body) {
+    const alert = await this.alertController.create({
+      header: title,
+      message: body,
+      backdropDismiss: false,
+      buttons: ['OK']
+    });
+    alert.onDidDismiss().then( () => {
+      this.getEstablishments();
+    });
+    return await alert.present();
+  }
 
   async presentLocationErrorAlert() {
     const alert = await this.alertController.create({
@@ -208,7 +206,6 @@ async singleAlert(title, body) {
     });
     await alert.present();
   }
-
 
   async presentLoading() {
     const loading = await this.loadingController.create({

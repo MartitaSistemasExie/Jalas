@@ -1,7 +1,7 @@
 <ion-header no-border="true" translucent>
   <ion-toolbar>
     <ion-button fill="clear" slot="start" (click)="cerrarModal()" color="danger">
-      Cerrar
+      <ion-icon name="chevron-back-outline"></ion-icon>
     </ion-button>
     <ion-title>Lugar</ion-title>
   </ion-toolbar>
@@ -27,7 +27,10 @@
                     </ion-card-title>
                     <br/>
                     <ion-card-subtitle>
-                      Tel: {{establishment.phone}}
+                      <ion-label>
+                        <b>Tel:</b>
+                      </ion-label>
+                       {{establishment.phone}}
                     </ion-card-subtitle>
                   </ion-col>
                 </ion-row>
@@ -35,7 +38,8 @@
                 <ion-row>
                   <ion-col>
                     <ion-text>
-                      Horarios: <br/>
+                      <b>Horarios:</b> 
+                      <br/>
                       <p style="font-size: small;">Lunes: {{establishment.conf.hours.lunes}}</p><br/>
                       <p style="font-size: small;">Martes: {{establishment.conf.hours.martes}}</p><br/>
                       <p style="font-size: small;">Miércoles: {{establishment.conf.hours.miercoles}}</p><br/>
@@ -57,7 +61,7 @@
                   <ion-col>
                     <ion-slides [options]="slideOpts">
                       <ion-slide *ngFor="let image of establishment.conf.gallery">
-                        <img [src]="'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/establishment/gallery/' + image + '.jpg'">
+                        <img [src]="'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/establishment/gallery/' + image + '.jpg'" style="width: 75px; height: 75px;">
                       </ion-slide>
                     </ion-slides>
                   </ion-col>
