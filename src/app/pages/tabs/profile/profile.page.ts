@@ -35,8 +35,13 @@ export class ProfilePage implements OnInit {
   emptyEvents = true;
   emptyPlaces = true;
   noEventsFound = true;
-  profileServer = urlBack + '/images/user/profile/';
-  bannerServer = urlBack + '/images/user/banner/';
+  // profileServer = urlBack + '/images/user/profile/';
+  // bannerServer = urlBack + '/images/user/banner/';
+  profileServer = environment.userImg + 'profile/';
+  bannerServer = environment.userImg + 'banner/';
+  eventBanner = environment.eventImg + 'banner/';
+  establishmentProfile = environment.establishmentImg + 'profile/';
+  establishmentBanner = environment.establishmentImg + 'banner/';
   userGeneres;
   slideOpts = {
     initialSlide: 0,

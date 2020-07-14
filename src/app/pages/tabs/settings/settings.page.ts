@@ -32,8 +32,10 @@ export class SettingsPage implements OnInit {
   serviceResp;
   emptyEvents = true;
   emptyPlaces = true;
-  profileServer = urlBack + '/images/user/profile/';
-  bannerServer = urlBack + '/images/user/banner/';
+  profileServer = environment.userImg + 'profile/';
+  bannerServer = environment.userImg + 'banner/';
+  // profileServer = urlBack + '/images/user/profile/';
+  // bannerServer = urlBack + '/images/user/banner/';
   constructor(private http: HTTP,
               private modalController: ModalController,
               private router: Router,

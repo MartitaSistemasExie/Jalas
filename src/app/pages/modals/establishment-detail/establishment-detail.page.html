@@ -12,13 +12,13 @@
     <ion-row>
       <ion-col>
         <ion-card class="myCard">
-            <img [src]="'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/establishment/banner/'+ establishment.conf.images.bannerImage + '.jpg'" class="bannerImage"/>
+            <img [src]="establishmentBanner + establishment.conf.images.bannerImage + '.jpg'" class="bannerImage"/>
             <div class="myOverlay">
               <ion-grid>
                 <ion-row>
                   <ion-col size="3">
                     <ion-avatar class="avatar-radius">
-                      <img [src]="'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/establishment/profile/'+ establishment.conf.images.profileImage + '.jpg'"/>
+                      <img [src]="establishmentProfile + establishment.conf.images.profileImage + '.jpg'"/>
                     </ion-avatar>
                   </ion-col>
                   <ion-col>
@@ -61,12 +61,8 @@
                   <ion-col>
                     <ion-slides [options]="slideOpts">
                       <ion-slide *ngFor="let image of establishment.conf.gallery">
-                        <!-- <ion-button fill="clear" (click)="openPhoto(image)" size="large"> -->
-                          <img [src]="'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/establishment/gallery/' + image + '.jpg'" style="width: auto; height: 100px!important;" (click)="openPhoto(image)">
-                        <!-- </ion-button> -->
-                        <!-- <ion-img [src]="'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/establishment/gallery/' + image + '.jpg'" style="width: 75px; height: 75px;">
-                          <ion-button fill="clear" (click)="openPhoto(image)"></ion-button>
-                        </ion-img> -->
+                          <img [src]="establishmentGallery + image + '.jpg'" style="width: auto; height: 100px!important;" (click)="openPhoto(image)">
+                        
                       </ion-slide>
                     </ion-slides>
     

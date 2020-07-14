@@ -15,6 +15,9 @@ const urlBack = environment.urlBackend;
 })
 export class EstablishmentDetailPage implements OnInit, AfterViewInit {
 
+  establishmentGallery = environment.establishmentImg + 'gallery/';
+  establishmentProfile = environment.establishmentImg + 'profile/';
+  establishmentBanner = environment.establishmentImg + 'banner/';
   public id = this.navParams.get('id');
   establishment;
   serviceResp;
@@ -36,7 +39,7 @@ export class EstablishmentDetailPage implements OnInit, AfterViewInit {
   }
 
   openPhoto(image) {
-    this.photoViewer.show('http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/establishment/gallery/' + image + '.jpg');
+    this.photoViewer.show(this.establishmentGallery + image + '.jpg');
   }
 
   async openEstablishmentGallery() {

@@ -26,6 +26,8 @@ export class EventsPage implements OnInit {
   events;
   emptyEvents = true;
   idUser;
+  eventBanner = environment.eventImg + 'banner/';
+  establishmentProfile = environment.establishmentImg + 'profile/';
   constructor(private alertController: AlertController,
               private http: HTTP,
               private modalController: ModalController,

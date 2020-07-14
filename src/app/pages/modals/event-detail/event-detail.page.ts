@@ -15,6 +15,9 @@ export class EventDetailPage implements OnInit, AfterViewInit {
   public id = this.navParams.get('id');
   event;
   serviceResp;
+  establishmentProfile = environment.establishmentImg + 'profile/';
+  eventBanner = environment.eventImg + 'banner/';
+
   constructor(private navParams: NavParams,
               public actionSheetController: ActionSheetController,
               private modalController: ModalController,

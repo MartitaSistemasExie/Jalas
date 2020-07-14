@@ -13,6 +13,8 @@ export class EstablishmentGalleryPage implements OnInit {
   public id = this.navParams.get('id');
   establishment;
   serviceResp;
+  establishmentGallery = environment.establishmentImg + 'gallery/';
+
   slideOpts = {
     initialSlide: 0,
     spaceBetween: 0,

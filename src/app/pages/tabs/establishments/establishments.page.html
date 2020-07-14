@@ -40,13 +40,13 @@
       <ion-col>
         <ion-item *ngFor="let site of establishments">
           <ion-card class="myCard">
-            <img [src]="'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/establishment/banner/'+site.images.bannerImage + '.jpg'" class="bannerImage"/>
+            <img [src]="establishmentBanner + site.images.bannerImage + '.jpg'" class="bannerImage"/>
             <div class="myOverlay">
               <ion-grid>
                 <ion-row>
                   <ion-col size="3">
                     <ion-avatar class="avatar-radius">
-                      <img [src]="'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/establishment/profile/'+site.images.profileImage + '.jpg'"/>
+                      <img [src]="establishmentProfile + site.images.profileImage + '.jpg'"/>
                     </ion-avatar>
                   </ion-col>
                   <ion-col>

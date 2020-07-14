@@ -25,6 +25,8 @@ export class EstablishmentsPage implements OnInit {
   establishments;
   emptyEstablishments = true;
   idUser;
+  establishmentBanner = environment.establishmentImg + 'banner/';
+  establishmentProfile = environment.establishmentImg + 'profile/';
   constructor(private alertController: AlertController,
               private http: HTTP,
               private loadingController: LoadingController,

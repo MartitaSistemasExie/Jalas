@@ -75,13 +75,13 @@
         <ion-slides *ngIf="!emptyEvents" [options]="slideOpts">
           <ion-slide *ngFor="let event of user.events">
             <ion-card class="myCard">
-              <img [src]="'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/event/banner/'+ event.conf.images.bannerImage + '.jpg'" class="bannerImage"/>
+              <img [src]="eventBanner + event.conf.images.bannerImage + '.jpg'" class="bannerImage"/>
               <div class="myOverlay">
                 <ion-grid>
                   <ion-row>
                     <ion-col size="3">
                       <ion-avatar class="avatar-radius">
-                        <img [src]="'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/establishment/profile/'+ event.establishment.conf.images.profileImage + '.jpg'" class="avatarImage"/>
+                        <img [src]="establishmentProfile+ event.establishment.conf.images.profileImage + '.jpg'" class="avatarImage"/>
                       </ion-avatar>
                     </ion-col>
                     <ion-col>
@@ -134,13 +134,13 @@
         <ion-slides *ngIf="!emptyPlaces" [options]="slideOpts">
           <ion-slide *ngFor="let site of user.favorites">
             <ion-card class="myCard">
-              <img [src]="'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/establishment/banner/'+site.conf.images.bannerImage + '.jpg'" class="bannerImage"/>
+              <img [src]="establishmentBanner + site.conf.images.bannerImage + '.jpg'" class="bannerImage"/>
               <div class="myOverlay">
                 <ion-grid>
                   <ion-row>
                     <ion-col size="3">
                       <ion-avatar class="avatar-radius">
-                        <img [src]="'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/establishment/profile/'+site.conf.images.profileImage + '.jpg'" class="avatarImage"/>
+                        <img [src]="establishmentProfile + site.conf.images.profileImage + '.jpg'" class="avatarImage"/>
                       </ion-avatar>
                     </ion-col>
                     <ion-col>
@@ -192,13 +192,13 @@
         <ion-slides *ngIf="!noEventsFound" [options]="slideOpts">
           <ion-slide *ngFor="let event of eventsGen">
             <ion-card class="myCard">
-              <img [src]="'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/event/banner/'+ event.bannerImage + '.jpg'" class="bannerImage"/>
+              <img [src]="eventBanner + event.bannerImage + '.jpg'" class="bannerImage"/>
               <div class="myOverlay">
                 <ion-grid>
                   <ion-row>
                     <ion-col size="3">
                       <ion-avatar class="avatar-radius">
-                        <img [src]="'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/establishment/profile/'+ event.establishment.profileImage + '.jpg'" class="avatarImage"/>
+                        <img [src]="establishmentProfile+ event.establishment.profileImage + '.jpg'" class="avatarImage"/>
                       </ion-avatar>
                     </ion-col>
                     <ion-col>

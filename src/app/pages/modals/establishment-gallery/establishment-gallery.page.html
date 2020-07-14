@@ -10,7 +10,7 @@
 <ion-content>
   <ion-slides [options]="slideOpts" pager="true">
     <ion-slide *ngFor="let image of establishment.conf.gallery">
-        <img [src]="'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/establishment/gallery/' + image + '.jpg'" style="width: 100%; height: 100%;">
+        <img [src]="establishmentGallery + image + '.jpg'" style="width: 100%; height: 100%;">
     </ion-slide>
   </ion-slides>
 </ion-content>

@@ -19,8 +19,12 @@ export class EditProfilePage implements OnInit {
   selectedBanner;
   selectedAvatar;
   serviceResp;
-  profileServer = urlBack + '/images/user/profile/';
-  bannerServer = urlBack + '/images/user/banner/';
+  // https://jalas-bucket.s3.us-east-1.amazonaws.com/public/images/establishment/banner/default.jpg
+  // profileServer = urlBack + '/images/user/profile/';
+    // bannerServer = urlBack + '/images/user/banner/';
+
+  profileServer = environment.userImg + 'profile/';
+  bannerServer = environment.userImg + 'banner/';
   constructor(private alertController: AlertController,
               private camera: Camera,
               private http: HTTP,
