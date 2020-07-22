@@ -31,6 +31,7 @@
     "@ionic/storage": "^2.2.0",
     "com-sarriaroman-photoviewer": "^1.2.5",
     "cordova-android": "8.1.0",
+    "cordova-ios": "5.1.1",
     "cordova-plugin-actionsheet": "^2.3.3",
     "cordova-plugin-add-swift-support": "^2.0.2",
     "cordova-plugin-advanced-http": "^2.5.1",
@@ -93,7 +94,8 @@
       "com-sarriaroman-photoviewer": {}
     },
     "platforms": [
-      "android"
+      "android",
+      "ios"
     ]
   }
 }

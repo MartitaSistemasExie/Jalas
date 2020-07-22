@@ -47,7 +47,7 @@ export class EventsPage implements OnInit {
 
   async locationAlert() {
     const alert = await this.alertController.create({
-      header: 'Encontrando Eventos',
+      header: 'Encontrando eventos',
       message: 'Estámos utilizando tu ubicación para encontrar los eventos más cercanos para ti',
       backdropDismiss: false,
       buttons: [
@@ -205,10 +205,10 @@ export class EventsPage implements OnInit {
       this.serviceResp = JSON.parse(resp.data);
       console.log('RESP: ', this.serviceResp);
       if (this.serviceResp.status == 1) {
-        this.singleAlert('Listo!', 'Agregaste correctamente a ' + event.name + ' en tu lista de eventos a asistir');
+        this.singleAlert('Listo', 'Agregaste correctamente a ' + event.name + ' en tu lista de eventos a asistiré');
       }
     }).catch(error => {
-      this.singleAlert('Ocurrió un Error', error);
+      this.singleAlert('Ocurrió un error', error);
     });
   }
 

@@ -158,7 +158,7 @@ export class SigninPage implements OnInit {
           }
         },
         {
-          text: 'Recuperar Contraseña',
+          text: 'Recuperar contraseña',
           handler: () => {
             this.router.navigate(['/reset-password'])
           }
@@ -175,7 +175,7 @@ export class SigninPage implements OnInit {
    */
   async presentLoading() {
     const loading = await this.loadingController.create({
-      message: 'Espera por favor...'
+      message: 'Espera por favor'
     });
     await loading.present();
     return ;

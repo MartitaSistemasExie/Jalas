@@ -155,7 +155,7 @@ export class EstablishmentDetailPage implements OnInit, AfterViewInit {
 
   async showMapOptions() {
     const actionSheet = await this.actionSheetController.create({
-      header: 'Ir Con',
+      header: 'Ir con:',
       cssClass: 'my-custom-class',
       buttons: [{
         text: 'Google Maps',
@@ -173,7 +173,7 @@ export class EstablishmentDetailPage implements OnInit, AfterViewInit {
           window.open('https://waze.com/ul?ll=' + this.establishment.conf.location.latitude + ',' + this.establishment.conf.location.longitude + '&z=10&navigate=yes', '_system');
         }
       }, {
-        text: 'Cancel',
+        text: 'Cancelar',
         icon: 'close',
         role: 'cancel',
         handler: () => {
@@ -186,7 +186,7 @@ export class EstablishmentDetailPage implements OnInit, AfterViewInit {
 
   async presentLoading() {
     const loading = await this.loadingController.create({
-      message: 'Espera por favor...'
+      message: 'Espera por favor'
     });
     await loading.present();
   }

@@ -20,7 +20,7 @@ export class SigninInfoPage implements OnInit {
     {id: 3, name: 'Electronica', isChecked: false},
     {id: 4, name: 'Pop', isChecked: false},
     {id: 5, name: 'Jazz', isChecked: false},
-    {id: 6, name: 'Ritmo Latinos', isChecked: false},
+    {id: 6, name: 'Ritmos latinos', isChecked: false},
     {id: 7, name: 'Metal', isChecked: false},
     {id: 8, name: 'Reg. Mexicano', isChecked: false},
     {id: 9, name: 'Hip-Hop', isChecked: false},
@@ -144,7 +144,7 @@ export class SigninInfoPage implements OnInit {
 
   async presentEmptyAlert() {
     const alert = await this.alertController.create({
-      subHeader: 'Debes llenar todos los campos!.',
+      subHeader: 'Debes llenar todos los campos.',
       message: '',
       buttons: ['Ok']
     });
@@ -164,7 +164,7 @@ export class SigninInfoPage implements OnInit {
 
   async presentLoading() {
     const loading = await this.loadingController.create({
-      message: 'Espera por favor...'
+      message: 'Espera por favor'
     });
     await loading.present();
   }

@@ -171,7 +171,7 @@ export class EditProfilePage implements OnInit {
 
   async presentErrorAlert() {
     const alert = await this.alertController.create({
-      header: 'Error!',
+      header: 'Error',
       message: 'Verifica tu internet e intenta más tarde',
       buttons: [
         {
@@ -190,7 +190,7 @@ export class EditProfilePage implements OnInit {
    */
   async presentErrorImage() {
     const alert = await this.alertController.create({
-      header: 'Lo Sentimos...',
+      header: 'Lo sentimos',
       message: 'Tu imagen es demasiado grande, intenta con una con menos resolución',
       buttons: [
         {
@@ -209,7 +209,7 @@ export class EditProfilePage implements OnInit {
    */
   async presentSuccessAlert() {
     const alert = await this.alertController.create({
-      header: 'Listo!',
+      header: 'Listo',
       message: 'Agregado correctamente',
       buttons: [
         {

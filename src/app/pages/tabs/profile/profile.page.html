@@ -42,7 +42,7 @@
         <ion-row>
           <ion-col></ion-col>
           <ion-col size="10">
-            <ion-label><b>Información Personal</b></ion-label>
+            <ion-label><b>Información personal</b></ion-label>
           </ion-col>
           <ion-col></ion-col>
         </ion-row>
@@ -55,7 +55,7 @@
         </ion-row>
         <br>
         <ion-row>
-          <ion-col><b>Radio de Búsqueda</b></ion-col>
+          <ion-col><b>Radio de búsqueda</b></ion-col>
         </ion-row>
         <br>
         <ion-row>
@@ -65,9 +65,11 @@
     </ion-row>
 
 <!--    EVENTOS-->
+<ion-row>
+  <ion-col>
     <ion-row>
       <ion-col>
-        <ion-label><b>Mis Eventos</b></ion-label>
+        <ion-label><b>Mis eventos</b></ion-label>
       </ion-col>
     </ion-row>
     <ion-row>
@@ -86,7 +88,8 @@
                     </ion-col>
                     <ion-col>
                       <ion-card-title>
-                        <b>{{event.name}}</b><br/>
+                        <b>{{event.name}}</b>
+                        <br/>
                         <ion-text>{{event.establishment.name}}</ion-text>
                       </ion-card-title>
                       <br/>
@@ -115,18 +118,21 @@
           </ion-slide>
         </ion-slides>
         <ion-card *ngIf="emptyEvents">
-          <ion-card-header>Sin Eventos</ion-card-header>
+          <ion-card-header>Sin eventos</ion-card-header>
           <ion-card-content>
-            Aún no marcas ningún evento como Asistiré <ion-icon name="star-outline"></ion-icon>
+            Aún no marcas ningún evento como asistiré <ion-icon name="star-outline"></ion-icon>
           </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
+  </ion-col>
+</ion-row>
 
-    <!-- LUGARES -->
+<ion-row>
+  <ion-col>
     <ion-row>
       <ion-col>
-        <ion-label><b>Mis Lugares</b></ion-label>
+        <ion-label><b>Mis lugares</b></ion-label>
       </ion-col>
     </ion-row>
     <ion-row>
@@ -145,7 +151,9 @@
                     </ion-col>
                     <ion-col>
                       <ion-card-title>
-                        <b>{{site.name}}</b>
+                        <ion-text style="font-size: small;">
+                          <b>{{site.name}}</b>
+                        </ion-text>
                       </ion-card-title>
                       <br/>
                       <ion-card-subtitle>
@@ -173,15 +181,18 @@
           </ion-slide>
         </ion-slides>
         <ion-card *ngIf="emptyPlaces">
-          <ion-card-header>Sin Lugares</ion-card-header>
+          <ion-card-header>Sin lugares</ion-card-header>
           <ion-card-content>
-            Aún no marcas ningún lugar como Favorito <ion-icon name="heart-outline"></ion-icon>
+            Aún no marcas ningún lugar como favorito <ion-icon name="heart-outline"></ion-icon>
           </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
-
-    <!-- Para Ti | Buscar por Generos -->
+  </ion-col>
+</ion-row>
+   
+<ion-row>
+  <ion-col>
     <ion-row>
       <ion-col>
         <ion-label><b>Para ti</b></ion-label>
@@ -232,13 +243,22 @@
           </ion-slide>
         </ion-slides>
         <ion-card *ngIf="noEventsFound">
-          <ion-card-header>Sin Eventos</ion-card-header>
+          <ion-card-header>Sin eventos</ion-card-header>
           <ion-card-content>
             No encontramos eventos con tus gustos musicales cerca de ti. <ion-icon name="sad-outline"></ion-icon>
           </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
+  </ion-col>
+</ion-row>
+    
+
+    <!-- LUGARES -->
+    
+
+    <!-- Para Ti | Buscar por Generos -->
+    
 
   </ion-grid>
 </ion-content>

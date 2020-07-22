@@ -71,7 +71,7 @@ export class EditPasswordPage implements OnInit {
    */
   async errorAlert() {
     const alert = await this.alertController.create({
-      header: 'Error!',
+      header: 'Error',
       message: 'Verifica tu internet e intenta de nuevo.',
       buttons: [{
         text: 'OK',
@@ -88,7 +88,7 @@ export class EditPasswordPage implements OnInit {
    */
   async successAlert() {
     const alert = await this.alertController.create({
-      header: 'Listo!',
+      header: 'Listo',
       message: 'Se ha modificado correctamente tu contraseña.',
       buttons: [{
         text: 'OK',
@@ -105,7 +105,7 @@ export class EditPasswordPage implements OnInit {
    */
   async passwordsAlert() {
     const alert = await this.alertController.create({
-      header: 'Error!',
+      header: 'Error',
       message: ' Las contraseñas no coinciden.',
       buttons: ['OK']
     });

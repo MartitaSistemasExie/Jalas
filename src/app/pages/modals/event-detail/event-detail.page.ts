@@ -151,7 +151,7 @@ export class EventDetailPage implements OnInit, AfterViewInit {
 
   async presentLoading() {
     const loading = await this.loadingController.create({
-      message: 'Espera por favor...'
+      message: 'Espera por favor'
     });
     await loading.present();
   }

@@ -3,7 +3,7 @@
     <ion-button fill="clear" slot="start" [routerLink]="['/login']" routerDirection="root" color="danger">
       <ion-icon name="chevron-back-outline"></ion-icon>
     </ion-button>
-    <ion-title>Crear Cuenta</ion-title>
+    <ion-title>Crear cuenta</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -12,14 +12,14 @@
     <!--   Title -->
     <ion-row>
       <ion-col>
-        <ion-text><p>Información Personal</p></ion-text>
+        <ion-text><p>Información personal</p></ion-text>
       </ion-col>
     </ion-row>
     <!--    Cumpleaños -->
     <ion-row>
       <ion-col>
         <ion-item>
-          <ion-label position="stacked" color="primary">Fecha de Nacimiento</ion-label>
+          <ion-label position="stacked" color="primary">Fecha de nacimiento</ion-label>
           <ion-datetime
                   displayFormat="YYYY MM DD"
                   doneText="Ok"
@@ -41,7 +41,7 @@
                       required>
             <ion-select-option value="H">Hombre</ion-select-option>
             <ion-select-option value="M">Mujer</ion-select-option>
-            <ion-select-option value="P">Sin Especificar</ion-select-option>
+            <ion-select-option value="P">Sin especificar</ion-select-option>
           </ion-select>
         </ion-item>
       </ion-col>
@@ -96,7 +96,7 @@
 <!--    Generos -->
     <ion-row>
       <ion-col>
-        <ion-text style="font-size: small" color="primary">Gustos Musicales Favoritos</ion-text><br/>
+        <ion-text style="font-size: small" color="primary">Gustos musicales favoritos</ion-text><br/>
         <ion-list>
           <ion-item *ngFor="let type of musicTypes" lines="none">
             <ion-label>

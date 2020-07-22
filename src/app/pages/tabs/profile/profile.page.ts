@@ -46,7 +46,7 @@ export class ProfilePage implements OnInit {
   slideOpts = {
     initialSlide: 0,
     spaceBetween: 0,
-    slidesPerView: 1.5,
+    slidesPerView: 1.2,
     speed: 400
   };
   constructor(private http: HTTP,
@@ -122,7 +122,7 @@ export class ProfilePage implements OnInit {
 
   async locationAlert() {
     const alert = await this.alertController.create({
-      header: 'Encontrando Eventos',
+      header: 'Encontrando eventos',
       message: 'Estámos utilizando tu ubicación para encontrar los eventos más adecuados para ti',
       backdropDismiss: false,
       buttons: [
@@ -194,7 +194,7 @@ export class ProfilePage implements OnInit {
       this.serviceResp = JSON.parse(resp.data);
       console.log('RESP: ', this.serviceResp);
       if (this.serviceResp.status == 1) {
-        this.singleAlert('Listo!', 'Quitaste correctamente a ' + event.name + ' de tu lista de eventos a asistir');
+        this.singleAlert('Listo', 'Quitaste correctamente a ' + event.name + ' de tu lista de eventos a asistir');
       }
     }).catch(error => {
       this.singleAlert('Ocurrió un Error', error);
@@ -214,7 +214,7 @@ export class ProfilePage implements OnInit {
       this.serviceResp = JSON.parse(resp.data);
       console.log('RESP: ', this.serviceResp);
       if (this.serviceResp.status == 1) {
-        this.singleAlert('Listo!', 'Agregarste correctamente a ' + event.name + '  tu lista de eventos a asistir');
+        this.singleAlert('Listo', 'Agregarste correctamente a ' + event.name + ' a tu lista de eventos a asistir');
       }
     }).catch(error => {
       this.singleAlert('Ocurrió un Error', error);
@@ -234,7 +234,7 @@ export class ProfilePage implements OnInit {
       this.serviceResp = JSON.parse(resp.data);
       console.log('RESP: ', this.serviceResp);
       if (this.serviceResp.status == 1) {
-        this.singleAlert('Listo!', 'Quitaste correctamente a ' + site.name + ' de tu lista de lugares favoritos.');
+        this.singleAlert('Listo!', 'Quitaste correctamente a ' + site.name + ' de tu lista de lugares favoritos');
       }
     }).catch(error => {
       this.singleAlert('Ocurrió un Error', error);

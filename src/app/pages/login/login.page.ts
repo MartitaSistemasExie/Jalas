@@ -86,7 +86,7 @@ export class LoginPage implements OnInit {
 
   async presentInvalidUserAlert() {
     const alert = await this.alertController.create({
-      subHeader: 'Usuario Incorrecto',
+      subHeader: 'Usuario incorrecto',
       message: 'Revisa tus credenciales e intenta de nuevo.',
       buttons: ['OK']
     });
@@ -97,7 +97,7 @@ export class LoginPage implements OnInit {
 
   async presentLoading() {
     const loader = await this.loadingController.create({
-      message: ' Espera Por favor',
+      message: ' Espera por favor',
     });
     await loader.present();
   }
