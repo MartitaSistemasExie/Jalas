@@ -77,7 +77,6 @@ export class EditProfilePage implements OnInit {
       correctOrientation: true,
       allowEdit: true,
       sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
-      targetHeight: 200
     };
     console.log('CAMERA OPTS: ', options);
     this.camera.getPicture(options).then((imageData) => {
@@ -128,8 +127,6 @@ export class EditProfilePage implements OnInit {
       correctOrientation: true,
       allowEdit: true,
       sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
-      targetHeight: 75,
-      targetWidth: 75
     };
     console.log('CAMERA OPTS: ', options);
     this.camera.getPicture(options).then((imageData) => {
