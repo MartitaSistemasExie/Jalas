@@ -70,11 +70,11 @@ export class EditProfilePage implements OnInit {
 
   addBannerImage() {
     const options: CameraOptions = {
-      quality: 5,
+      quality: 20,
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
-      correctOrientation: true,
+      // correctOrientation: true,
       allowEdit: true,
       sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
     };
@@ -120,11 +120,11 @@ export class EditProfilePage implements OnInit {
 
   addAvatarImage() {
     const options: CameraOptions = {
-      quality: 5,
+      quality: 20,
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
-      correctOrientation: true,
+      // correctOrientation: true,
       allowEdit: true,
       sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
     };
